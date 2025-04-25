@@ -194,6 +194,11 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
+	$U/_sleep\
+	$U/_pingpong\
+	$U/_primes\
+	$U/_find\
+	$U/_xargs\
 
 
 
@@ -273,8 +278,8 @@ ifeq ($(LAB),util)
 endif
 
 
-fs.img: mkfs/mkfs README $(UEXTRA) $(UPROGS)
-	mkfs/mkfs fs.img README $(UEXTRA) $(UPROGS)
+fs.img: mkfs/mkfs README $(UEXTRA) $(UPROGS) user/xargstest.sh
+	mkfs/mkfs fs.img README $(UEXTRA) $(UPROGS) user/xargstest.sh
 
 -include kernel/*.d user/*.d
 
